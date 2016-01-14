@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import urllib2
 from BeautifulSoup import BeautifulSoup
 
@@ -49,7 +47,3 @@ def get_bar(blood_stock_level):
         return bar + '+'
     else:
         return bar + ' '
-
-
-if __name__ == '__main__':
-    main()
