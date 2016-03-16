@@ -21,7 +21,6 @@ def main():
     len_longest_blood_type = 3
 
     if args.is_csv:
-        print "date,blood_type,days_left"
         date_str = str(date.today())
 
     for stock_level in stock:
