@@ -1,7 +1,7 @@
 import urllib2
 from BeautifulSoup import BeautifulSoup
 import argparse
-
+from datetime import date
 
 def main():
     parser = argparse.ArgumentParser(description='Produce a command line view of the current Scotblood blood levels')
@@ -21,7 +21,8 @@ def main():
     len_longest_blood_type = 3
 
     if args.is_csv:
-        print "blood_type,days_left"
+        print "date,blood_type,days_left"
+        date_str = str(date.today())
 
     for stock_level in stock:
         stock_data = stock_level['title'].split()
@@ -29,7 +30,7 @@ def main():
         blood_stock_level = stock_data[5]
         
         if args.is_csv:
-            print blood_type + ',' + blood_stock_level
+            print date_str + ',' + blood_type + ',' + blood_stock_level
 
         else:
             print blood_type + ' ' * (len_longest_blood_type - len(blood_type)) + \
