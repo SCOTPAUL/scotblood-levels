@@ -10,7 +10,7 @@ title: Scotblood Levels
 description: > # this means to ignore newlines until "baseurl:"
     A graph of Scotblood's stock levels
 github_username:  SCOTPAUL
-
+baseurl: /scotblood-levels
 # Build settings
 markdown: kramdown
 include:
