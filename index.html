@@ -3,13 +3,10 @@ layout: default
 ---
 
 <div class="home">
-    <ul>
-        {% for stat in site.data.blood_stats %}
-        <li>
-            {{ stat.date }} - {{ stat.type }} - {{ stat.days_remaining }}
-        </li>
-        {% endfor %}
-    </ul>
+    <h2>Graph of Blood Stock</h2>
+    <p>The following chart shows the change in Scotblood's blood stock over time. Note that a higher number of days remaining does not mean that there is more stock in real terms, only that it is estimated to last longer.</p>
+    <p>This project aims to see if there are any visible trends in stock levels e.g. more or less in different seasons or after major events.</p>
+    <hr>
     <div id="chart">
         <svg></svg>
     </div>
