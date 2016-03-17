@@ -1,7 +1,7 @@
-import urllib2
 from BeautifulSoup import BeautifulSoup
 import argparse
 from datetime import date
+import requests
 
 def main():
     parser = argparse.ArgumentParser(description='Produce a command line view of the current Scotblood blood levels')
@@ -11,10 +11,9 @@ def main():
     args = parser.parse_args()
 
     url = 'https://www.scotblood.co.uk/learn-about-blood/current-blood-stock-levels.aspx'
-    request = urllib2.Request(url, headers={
+    request = requests.get(url, headers={
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0'})
-    response = urllib2.urlopen(request)
-    data = response.read()
+    data = request.text
     parsed_data = BeautifulSoup(data)
     stock = parsed_data.body.find('ul', attrs={'class': 'stock-levels fc'}).findAll('li')
 
