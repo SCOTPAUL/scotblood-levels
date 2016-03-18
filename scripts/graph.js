@@ -47,11 +47,20 @@ $(document).ready(function(){
       });
     }
 
+    ret.push({
+        values: [],
+        key: 'Target',
+        classed: 'dashed',
+        color: '#000000',
+        strokeWidth: 6
+    });
+
     for(var i = 0; i < res.length; ++i){
       var current = res[i];
       var pos = blood_types.indexOf(current.type);
       if(pos != -1){
         ret[pos].values.push({x:new Date(current.date), y:parseFloat(current.days_remaining)});
+        ret[ret.length - 1].values.push({x: new Date(current.date), y:6.0})
       }
     }
     
