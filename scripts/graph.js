@@ -52,7 +52,7 @@ $(document).ready(function(){
         key: 'Target',
         classed: 'dashed',
         color: '#000000',
-        strokeWidth: 6
+        strokeWidth: 4
     });
 
     for(var i = 0; i < res.length; ++i){

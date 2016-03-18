@@ -12,6 +12,10 @@ dl, dd, ol, ul, figure {
     height:50vh;
 }
 
+.nv-group.dashed {
+    stroke-dasharray: 20,5;
+}
+
 /**
  * Basic styling
  */
