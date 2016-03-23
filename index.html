@@ -2,11 +2,30 @@
 layout: default
 ---
 
+{% assign blood_types = "O-,A-,B-,AB-,O+,A+,B+,AB+" | split:"," %}
+
 <div class="home">
     <h2>Graph of Blood Stock</h2>
     <p>The following chart shows the change in Scotblood's blood stock over time. Note that a higher number of days remaining does not mean that there is more stock in real terms, only that it is estimated to last longer.</p>
     <p>This project aims to see if there are any visible trends in stock levels e.g. more or less in different seasons or after major events.</p>
     <hr>
+
+    <div>
+        {% assign stats_len = site.data.blood_stats | size %}
+        {% assign num_types = blood_types | size %}
+        {% assign data = site.data.blood_stats | reverse %}     
+        <ul>
+        {% for type in blood_types reversed %}
+            {% assign next = forloop.index0 | plus:num_types %}
+            {% assign change = data[forloop.index0].days_remaining | minus:data[next].days_remaining %}
+            <li>
+                <span class="type {{ type }}">{{ type }}</span>
+                <span class="change {% if change > 0 %}up{% elsif change < 0 %}down{% else %}same{% endif %}">{% if change >= 0 %}+{% endif %}{{ change }}</span>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+
     <div id="chart">
         <svg></svg>
     </div>
