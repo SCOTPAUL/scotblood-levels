@@ -13,5 +13,21 @@ github_username:  SCOTPAUL
 baseurl: /scotblood-levels
 # Build settings
 markdown: kramdown
-include:
-      - _data
+
+gems:
+    - jekyll-assets
+    - uglifier
+
+assets:
+  compress:
+    css: true
+    js: true
+  cache: false
+  prefix: "/assets"
+  assets:
+    - "*.js"
+    - "*.png"
+    - "bundle.css"
+  digest: true
+  sources:
+    - "_assets/js"
