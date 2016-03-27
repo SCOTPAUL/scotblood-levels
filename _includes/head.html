@@ -5,9 +5,9 @@
   <script src="{{ "/scripts/jquery.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/scripts/d3.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/scripts/nv.d3.min.js" | prepend: site.baseurl }}"></script>
-  {% js 'graph.js' %}
   <script src="{{ "/scripts/jquery.csv.js" | prepend: site.baseurl }}"></script>
   <link href="{{ "/css/nv.d3.min.css" | prepend: site.baseurl }}" rel="stylesheet">
+  <script src="{{ "/scripts/graph.js" | prepend: site.baseurl }}"></script>
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
