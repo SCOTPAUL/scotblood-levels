@@ -1,4 +1,10 @@
+---
+---
+
 // Placeholder from http://nvd3.org/examples/line.html
+$(document).ready(startgraph());
+
+
 function startgraph(){
    nv.addGraph(function() {
       var chart = nv.models.lineChart()
@@ -30,8 +36,11 @@ function startgraph(){
   });
 }
 
+
 function getData() {
+  var ret = [];
   var i;
+
   /* jshint ignore:start */
   {% assign blood_types = "O-,A-,B-,AB-,O+,A+,B+,AB+" | split:"," %}
   {% assign stats_len = site.data.blood_stats | size %}
@@ -54,7 +63,7 @@ function getData() {
   ]
   /* jshint ignore:end */
 
+
+  //Line chart data should be sent as an array of series objects.
   return ret;
 }
-
-startgraph();
