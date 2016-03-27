@@ -2,9 +2,6 @@
 ---
 
 // Placeholder from http://nvd3.org/examples/line.html
-$(document).ready(startgraph());
-
-
 function startgraph(){
    nv.addGraph(function() {
       var chart = nv.models.lineChart()
@@ -34,7 +31,7 @@ function startgraph(){
       nv.utils.windowResize(function() { chart.update(); });
       return chart;
   });
-}
+};
 
 
 function getData() {
@@ -67,3 +64,5 @@ function getData() {
   //Line chart data should be sent as an array of series objects.
   return ret;
 }
+
+startgraph();
