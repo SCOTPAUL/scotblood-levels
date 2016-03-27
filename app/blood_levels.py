@@ -26,7 +26,7 @@ def main():
         stock_data = stock_level['title'].split()
         blood_type = stock_data[0]
         blood_stock_level = stock_data[5]
-        
+
         if args.is_csv:
             print date_str + ',' + blood_type + ',' + blood_stock_level
 
