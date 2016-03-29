@@ -8,19 +8,28 @@ dl, dd, ol, ul, figure {
   padding: 0; }
 
 #chart svg {
-  height: 50vh; }
+  height: 60vh;
+}
+
+.nv-focus {
+  margin-bottom: 200px;
+}
 
 .nv-group.dashed {
-  stroke-dasharray: 20,5; }
+  stroke-dasharray: 20,5;
+}
 
 .change.up {
-  color: green; }
+  color: green;
+}
 
 .change.down {
-  color: red; }
+  color: red;
+}
 
 .change.same {
-  color: grey-color-light; }
+  color: grey-color-light;
+}
 
 /**
  * Basic styling
