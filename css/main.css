@@ -7,6 +7,16 @@ dl, dd, ol, ul, figure {
   margin: 0;
   padding: 0; }
 
+#gauge {
+  border: 1px solid #f15252;
+}
+
+#gaugelabel {
+  font-size: 80px;
+  color: #f15252;
+  text-align: center;
+}
+
 #chart svg {
   height: 60vh;
 }
