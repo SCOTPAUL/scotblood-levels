@@ -12,10 +12,14 @@ layout: default
     <h2>Current Stock - <small>Click box to change</small></h2>
     <div id="gauge" class="row">
       <div id="gaugelabel" class="one-half column">
-        <span id=gauge1label></span>
+          <ul>
+          {% for type in blood_types %}
+          <li class="{{ type }} gaugetab {% if forloop.first %}selected{% endif %}">{{ type }}</li>
+          {% endfor %}
+          </ul>
       </div>
       <div class="one-half column">
-        <svg id="fillgauge1"></svg>
+        <svg id="fillgauge1" height="20em"></svg>
       </div>
     </div>
 

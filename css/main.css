@@ -11,10 +11,13 @@ dl, dd, ol, ul, figure {
   border: 1px solid #f15252;
 }
 
-#gaugelabel {
-  font-size: 80px;
-  color: #f15252;
-  text-align: center;
+.gaugetab {
+    list-style-type: none;
+    border: 1px solid blue;
+}
+
+.gaugetab.selected {
+    background-color: green;
 }
 
 #chart svg {

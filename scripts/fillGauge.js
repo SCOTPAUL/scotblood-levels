@@ -11,25 +11,34 @@ config1.maxValue = 10;
 
 var vals;
 
-var i = 0;
-function getIndex(){
-  i = (i + 1) % vals.length;
-  return i;
-}
-
-function updateGauge(gauge, label){
-    var index = getIndex();
+function updateGauge(gauge, index){
     var newVal = vals[index].values.slice(-1)[0].y;
-    label.innerHTML = vals[index].key;
     gauge.update(newVal);
 }
 
+function onTabSelect(gauge, tab, index){
+    Array.prototype.forEach.call(tab.parentElement.children, function(elem){
+        elem.classList.remove("selected");
+    });
+
+    tab.className += " selected";
+
+    updateGauge(gauge, index);
+}
+
+function initHandlers(gauge){
+  var tabs = document.getElementsByClassName("gaugetab");
+
+  Array.prototype.forEach.call(tabs, function(elem, index){
+      elem.onclick = function() {
+        onTabSelect(gauge, elem, index);    
+      }
+  });
+}
 
 function startgauge(data){
   vals = data;
   var gauge1 = loadLiquidFillGauge("fillgauge1", vals[0].values.slice(-1)[0].y, config1);
-  var label = document.getElementById("gauge1label");
 
-  label.innerHTML = vals[0].key;
-  document.getElementById("gauge").onclick = function(){ updateGauge(gauge1, label); };
+  initHandlers(gauge1);
 }
