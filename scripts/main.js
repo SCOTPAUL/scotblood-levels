@@ -32,7 +32,15 @@ function getData() {
   return ret;
 };
 
+function initGlobalHandlers(data){
+  document.getElementById("download-data").onclick = function(){
+    this.href = "data:plain/text," + JSON.stringify(data);
+  };
+}
+
 window.onload = function(){
+   var data = getData();
+   initGlobalHandlers(data);
    startgraph();
-   startgauge(getData());
+   startgauge(data);
 };
