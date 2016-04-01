@@ -1,8 +1,8 @@
 var config1 = liquidFillGaugeDefaultSettings();
-config1.circleColor = "#FF7777";
+config1.circleColor = "#C94141";
 config1.textColor = "#FF4444";
 config1.waveTextColor = "#FFAAAA";
-config1.waveColor = "#f15252";
+config1.waveColor = "#8A0707";
 config1.circleThickness = 0.2;
 config1.textVertPosition = 0.2;
 config1.waveAnimateTime = 1000;
@@ -31,7 +31,7 @@ function initHandlers(gauge){
 
   Array.prototype.forEach.call(tabs, function(elem, index){
       elem.onclick = function() {
-        onTabSelect(gauge, elem, index);    
+        onTabSelect(gauge, elem, index);
       }
   });
 }
