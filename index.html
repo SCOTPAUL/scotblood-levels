@@ -23,10 +23,19 @@ layout: default
       </div>
     </div>
 
-    <h2>Graph of Blood Stock</h2>
-    <div id="chart">
-        <svg></svg>
+    <div class="row">
+      <h2>Graph of Blood Stock</h2>
+      <div id="chart">
+          <svg></svg>
+      </div>
     </div>
 
-    <a class="button button-primary" href="#" id="download-data" download="blood_data.json">Download this data as JSON</a>
+    <div class="row">
+      <div class="one-third column">
+        <a class="button" href="#" id="download-json" download="blood_data.json">Download as JSON</a>
+      </div>
+      <div class="one-third offset-by-one-third column">
+        <a class="button" href="https://raw.githubusercontent.com/SCOTPAUL/scotblood-levels/gh-pages/_data/blood_stats.csv" id="download-csv" download="blood_data.csv">Download as CSV</a>
+      </div>
+    </div>
 </div>

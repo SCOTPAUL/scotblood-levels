@@ -49,16 +49,12 @@ dl, dd, ol, ul, figure {
   stroke-dasharray: 20,5;
 }
 
-.change.up {
-  color: green;
+#download-json {
+  float: left;
 }
 
-.change.down {
-  color: red;
-}
-
-.change.same {
-  color: grey-color-light;
+#download-csv {
+  float: right;
 }
 
 /**

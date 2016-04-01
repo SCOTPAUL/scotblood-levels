@@ -33,7 +33,7 @@ function getData() {
 };
 
 function initGlobalHandlers(data){
-  document.getElementById("download-data").onclick = function(){
+  document.getElementById("download-json").onclick = function(){
     this.href = "data:plain/text," + JSON.stringify(data);
   };
 }
