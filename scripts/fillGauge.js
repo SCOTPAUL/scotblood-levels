@@ -32,7 +32,7 @@ function initHandlers(gauge){
   Array.prototype.forEach.call(tabs, function(elem, index){
       elem.onclick = function() {
         onTabSelect(gauge, elem, index);
-      }
+      };
   });
 }
 
