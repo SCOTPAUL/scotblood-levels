@@ -15,18 +15,11 @@ function getData() {
   {% for type in blood_types %}
     {
       key: "{{ type }}",
-      values:[
-        {% for record in data %}
-          {% if record.type == type %}
-            {x:new Date("{{ record.date }}"), y:parseFloat("{{ record.days_remaining }}")},
-          {% endif %}
-        {% endfor %}
-      ],
+      values:[{% for record in data %}{% if record.type == type %}{x:new Date("{{ record.date }}"), y:parseFloat("{{ record.days_remaining }}")},{% endif %}{% endfor %}]
     },
   {% endfor %}
   ]
   /* jshint ignore:end */
-
 
   //Line chart data should be sent as an array of series objects.
   return ret;
