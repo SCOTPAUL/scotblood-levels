@@ -1,3 +1,7 @@
+# Depricated
+
+No longer works, the blood level page changed its layout and this hasn't been updated since.
+
 # Scotblood Levels
 
 This is a command line application for fetching the latest blood stock levels from [The Scottish National Blood Transfusion Service](https://www.scotblood.co.uk/), and present it in a human or machine readable way. This project is completely unaffiliated with The Scottish National Blood Transfusion Service.
